@@ -1,32 +1,16 @@
 <?php
 
-use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\PedidosController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('ListarProdutos');
+    return view('welcome');
 });
 
-Route::get('products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/clientes', [ClientesController::class,'index']);
+Route::get('/pedidos', [PedidosController::class,'index']);
 
-// Route::get('paginainicial', function () {
-//     return view('paginainicial');
-// });
-
-
-
-
-
-
-
-//  Route::get('/lista-de-alunos', function () {
-//     $aluno1 = 'Kauan';
-//     $aluno2 = 'Grazi';
-//     $aluno3 = 'Robson';
-//     $aluno4 = 'Dani';
-//     return view('listarprodutos')
-//         -> with('aluno1', $aluno1)
-//         -> with('aluno2', $aluno2)
-//         -> with('aluno3', $aluno3)
-//         -> with('aluno4', $aluno4);
-// });
+Route::get('/home', function () {
+    return view('home');
+});

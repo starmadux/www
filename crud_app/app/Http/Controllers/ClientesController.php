@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class ClientesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,7 +12,30 @@ class ProductController extends Controller
     public function index()
     {
         //
-        return view('ListarProdutos');
+        $clientes = [
+            ['id' => 1,
+             'nome' => 'Ana',
+             'cpf' => '066.111.325-09',
+             'rg' => '1638541',
+             'sexo' => 'outro',
+             'data_nascimento' => '26/05/1965',
+             'celular' => '69984082712',
+             'email' => 'ana@gmail.com',
+        ],
+            ['id' => 2,
+            'nome' => 'Nix',
+            'cpf' => '014.009.202-02',
+            'rg' => '1838542',
+            'sexo' => 'feminino',
+            'data_nascimento' => '01/03/2000',
+            'celular' => '69985451214',
+            'email' => 'nix@gmail.com'
+    ]
+    ];
+
+    $ClientesList = array_column($clientes, 'name');
+
+    return view('ListaClientes', compact('clientes', 'ClientesList'));
     }
 
     /**

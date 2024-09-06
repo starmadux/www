@@ -8,13 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    
-    protected $fillabe = [
-        'nome_produto',
-        'marca',
-        'categoria',
-        'valor_compra',
-        'valor_venda',
-        'qtd_estoque',
-    ];
 }
